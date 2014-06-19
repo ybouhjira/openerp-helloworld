@@ -9,4 +9,7 @@
   'installable': True,
   'application': True,
   'auto_install': False,
+  'data': [
+    'helloworld_view.xml'
+  ]
 }

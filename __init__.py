@@ -1,6 +1,6 @@
 from osv import osv, fields
 
-class Message(osv.Model):
+class Message(osv.osv):
   """ A message like 'Hello world' or something """
   
   _name = 'helloworld.message'
@@ -8,3 +8,4 @@ class Message(osv.Model):
   _columns = {
     'content' : fields.char('Content', size=64, required=True, translate=True)
   }
+Message()

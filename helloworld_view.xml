@@ -1,18 +1,33 @@
 <?xml version="1.0"?>
 <openerp>
   <data>
-    <!-- New note Form View -->
+
+    <!-- Form View -->
     <record model="ir.ui.view" id="view_message_form">
       <field name="name">helloworld.message.form</field>
       <field name="model">helloworld.message</field>
       <field name="type">form</field>
       <field name="arch" type="xml">
-       <form version="7.0">
-        <header> ... content of the status bar  ... </header>
-        <sheet>  ... content of the sheet       ... </sheet>
-        <div class=”oe_chatter”> ... content of the bottom part ... </div>
+       <form version="7.0" string="Hello">
+        <field name="content" />
       </form>
     </field>
   </record>
+
+  <!-- Action -->
+    <record model="ir.actions.act_window" id="action_message_stage">
+        <field name="name">Stages</field>
+        <field name="res_model">helloworld.message</field>
+        <field name="view_mode">form</field>
+    </record>
+
+
+  <menuitem 
+    name="Hello world!" 
+    id="menu_helloworld_messages" 
+    parent="mail.mail_my_stuff" 
+    sequence="1" 
+    action="action_message_stage"/>
+    
 </data>
 </openerp>

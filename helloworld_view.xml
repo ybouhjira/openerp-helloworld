@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <!-- New note Form View -->
+    <record model="ir.ui.view" id="view_message_form">
+      <field name="name">helloworld.message.form</field>
+      <field name="model">helloworld.message</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+       <form version="7.0">
+        <header> ... content of the status bar  ... </header>
+        <sheet>  ... content of the sheet       ... </sheet>
+        <div class=”oe_chatter”> ... content of the bottom part ... </div>
+      </form>
+    </field>
+  </record>
+</data>
+</openerp>

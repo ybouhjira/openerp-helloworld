@@ -8,26 +8,25 @@
       <field name="model">helloworld.message</field>
       <field name="type">form</field>
       <field name="arch" type="xml">
-       <form version="7.0" string="Hello">
-        <field name="content" />
-      </form>
-    </field>
-  </record>
+        <form version="7.0" string="Hello">
+          <field name="content" />
+        </form>
+      </field>
+    </record>
 
-  <!-- Action -->
+    <!-- Action -->
     <record model="ir.actions.act_window" id="action_message_stage">
-        <field name="name">Stages</field>
-        <field name="res_model">helloworld.message</field>
-        <field name="view_mode">form</field>
+      <field name="name">Stages</field>
+      <field name="res_model">helloworld.message</field>
+      <field name="view_mode">form</field>
     </record>
 
 
-  <menuitem 
-    name="Hello world!" 
-    id="menu_helloworld_messages" 
-    parent="mail.mail_my_stuff" 
-    sequence="1" 
-    action="action_message_stage"/>
+    <menuitem 
+      name="Hello world!" 
+      id="menu_helloworld_messages" 
+      sequence="1" 
+      action="action_message_stage"/>
     
-</data>
+  </data>
 </openerp>

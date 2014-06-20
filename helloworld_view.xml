@@ -3,30 +3,98 @@
   <data>
 
     <!-- Form View -->
-    <record model="ir.ui.view" id="view_message_form">
-      <field name="name">helloworld.message.form</field>
-      <field name="model">helloworld.message</field>
+    <record model="ir.ui.view" id="view_book_form">
+      <field name="name">helloworld.book.form</field>
+      <field name="model">helloworld.book</field>
       <field name="type">form</field>
       <field name="arch" type="xml">
         <form version="7.0" string="Hello">
-          <field name="content" />
+          <header> 
+            <button class="oe_highlight" name="helloworld_button_dostuff" string="Does nothing"/>
+          </header>
+          <sheet> 
+            <label for="title" />
+            <h1><field name="title" /></h1>
+            <group>
+              <field name="isbn" colspan="1" />
+              <field name="author_id" colspan="2"  />
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
 
+    <!-- Tree view -->
+    <record model="ir.ui.view" id="view_book_tree" >
+        <field name="name">helloworld.book.tree</field>
+        <field name="model">helloworld.book</field>
+        <field name="arch" type="xml">
+            <tree string="Books">  
+                <field name="title"/>  
+                <field name="isbn"/>
+                <field name="author_id"/> 
+            </tree>
+        </field>
+    </record>
+
     <!-- Action -->
-    <record model="ir.actions.act_window" id="action_message_stage">
-      <field name="name">Stages</field>
-      <field name="res_model">helloworld.message</field>
-      <field name="view_mode">form</field>
+    <record model="ir.actions.act_window" id="action_book_view">
+      <field name="name">Books</field>
+      <field name="res_model">helloworld.book</field>
+      <field name="view_mode">form,tree</field>
+    </record>
+
+    <menuitem name="Books" id="menu_helloworld_books" sequence="1" action="action_book_view"/>
+
+
+    <!-- AUTHORS -->
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="view_author_form">
+      <field name="name">helloworld.author.form</field>
+      <field name="model">helloworld.author</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form version="7.0" string="Hello">
+          <header> 
+            <button class="oe_highlight" name="helloworld_button_dostuff" string="Does nothing"/>
+          </header>
+          <sheet> 
+            <label string="Full name :" />
+            <h1>
+              <field name="firstName" />
+              <field name="lastName" />
+            </h1>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Tree view -->
+    <record model="ir.ui.view" id="view_author_tree" >
+        <field name="name">helloworld.author.tree</field>
+        <field name="model">helloworld.author</field>
+        <field name="arch" type="xml">
+            <tree string="Authors">  
+                <field name="firstName" />  
+                <field name="lastName"/>
+            </tree>
+        </field>
     </record>
 
 
+    <!-- Action -->
+    <record model="ir.actions.act_window" id="action_author_view">
+      <field name="name">Authors</field>
+      <field name="res_model">helloworld.author</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem 
-      name="Hello world!" 
-      id="menu_helloworld_messages" 
+      name="Authors" 
+      id="menu_helloworld_authors" 
       sequence="1" 
-      action="action_message_stage"/>
+      action="action_author_view"/>
     
   </data>
 </openerp>

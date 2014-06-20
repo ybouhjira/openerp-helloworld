@@ -37,16 +37,6 @@
         </field>
     </record>
 
-    <!-- Action -->
-    <record model="ir.actions.act_window" id="action_book_view">
-      <field name="name">Books</field>
-      <field name="res_model">helloworld.book</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem name="Books" id="menu_helloworld_books" sequence="1" action="action_book_view"/>
-
-
     <!-- AUTHORS -->
 
     <!-- Form View -->
@@ -90,11 +80,17 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem 
-      name="Authors" 
-      id="menu_helloworld_authors" 
-      sequence="1" 
-      action="action_author_view"/>
+    <record model="ir.actions.act_window" id="action_book_view">
+      <field name="name">Books</field>
+      <field name="res_model">helloworld.book</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem name="Library" id="menu_helloworld" sequence="1" />
+    <menuitem name="Library" parent="menu_helloworld" id="menu_helloworld_library" sequence="1" />
+    <menuitem name="Books" parent="menu_helloworld_library" id="menu_helloworld_books" sequence="1" action="action_book_view"/>
+    <menuitem name="Authors" parent="menu_helloworld_library" id="menu_helloworld_authors" sequence="1" action="action_author_view"/>
     
   </data>
 </openerp>

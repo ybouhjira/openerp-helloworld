@@ -41,7 +41,7 @@
     <record model="ir.actions.act_window" id="action_book_view">
       <field name="name">Books</field>
       <field name="res_model">helloworld.book</field>
-      <field name="view_mode">form,tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem name="Books" id="menu_helloworld_books" sequence="1" action="action_book_view"/>

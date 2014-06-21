@@ -1,6 +1,6 @@
 from osv import osv, fields 
 
-class Book(osv.Model) :
+class Book(osv.osv) :
   """ A book """
 
   _name = 'helloworld.book'

@@ -1,6 +1,6 @@
 from osv import osv, fields
 
-class Author(osv.Model):
+class Author(osv.osv):
   """ An author """
   
   _name = 'helloworld.author'
